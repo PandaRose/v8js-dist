@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "build": "docker build --tag v8js-dist:7.4 .",
+        "shell": "docker run -it --entrypoint=/bin/bash v8js-dist:7.4"
+    }
+}
