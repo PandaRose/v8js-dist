@@ -1,4 +1,4 @@
-FROM stesie/libv8-8.4 AS builder
+FROM stesie/libv8-8.7 AS builder
 
 ENV PHP_VERSION="8.0"
 
