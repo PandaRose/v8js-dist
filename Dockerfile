@@ -1,6 +1,6 @@
 FROM stesie/libv8-8.4 AS builder
 
-ENV PHP_VERSION="7.4"
+ENV PHP_VERSION="8.0"
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -yq software-properties-common && \
@@ -10,9 +10,9 @@ RUN apt-get update && \
     php${PHP_VERSION} \
     php${PHP_VERSION}-dev \
     git ca-certificates g++ make && \
-    update-alternatives --set phpize /usr/bin/phpize7.4 && \
-    update-alternatives --set php /usr/bin/php7.4 && \
-    update-alternatives --set php-config /usr/bin/php-config7.4
+    update-alternatives --set phpize /usr/bin/phpize${PHP_VERSION} && \
+    update-alternatives --set php /usr/bin/php${PHP_VERSION} && \
+    update-alternatives --set php-config /usr/bin/php-config${PHP_VERSION}
 
 RUN git clone https://github.com/phpv8/v8js.git /usr/local/src/v8js
 WORKDIR /usr/local/src/v8js
