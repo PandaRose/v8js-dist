@@ -14,7 +14,9 @@ RUN apt-get update && \
     update-alternatives --set php /usr/bin/php${PHP_VERSION} && \
     update-alternatives --set php-config /usr/bin/php-config${PHP_VERSION}
 
-RUN git clone https://github.com/PandaRose/v8js.git /usr/local/src/v8js && git checkout php8
+RUN git clone https://github.com/PandaRose/v8js.git /usr/local/src/v8js && \
+    cd /usr/local/src/v8js && git checkout php8;
+
 WORKDIR /usr/local/src/v8js
 
 RUN phpize
