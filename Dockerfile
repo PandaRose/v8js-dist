@@ -1,6 +1,6 @@
 FROM stesie/libv8-8.4 AS builder
 
-ENV PHP_VERSION="8.0"
+ENV PHP_VERSION="7.4"
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -yq software-properties-common && \
