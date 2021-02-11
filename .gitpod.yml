@@ -11,3 +11,6 @@ tasks:
       ./configure --with-v8js=/opt/libv8-8.4 LDFLAGS="-lstdc++" CPPFLAGS="-DV8_COMPRESS_POINTERS";
       sh ../append.sh;
       make all -j4;
+      cp modules/v8js.so ../v8/v8js.so;
+      cp -r v8/libv8-8.4 /opt;
+      cd ..;
