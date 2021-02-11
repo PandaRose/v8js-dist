@@ -2,4 +2,12 @@ image:
   file: Dockerfile
 
 tasks:
-  - init: npm install && npm run build
+  - name: Build
+    command: >
+      git clone https://github.com/PandaRose/v8js.git;
+      cd v8js;
+      git checkout php8;
+      phpize;
+      ./configure --with-v8js=/opt/libv8-8.4 LDFLAGS="-lstdc++" CPPFLAGS="-DV8_COMPRESS_POINTERS";
+      sh ../append.sh;
+      make all -j4;
