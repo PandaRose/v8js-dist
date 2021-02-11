@@ -1,2 +1,14 @@
 image:
   file: Dockerfile
+
+tasks:
+  - name: Build
+    command: >
+      git clone https://github.com/PandaRose/v8js.git;
+      cd v8js;
+      phpize;
+      ./configure --with-v8js=/opt/libv8-8.4 LDFLAGS="-lstdc++" CPPFLAGS="-DV8_COMPRESS_POINTERS";
+      make all -j4;
+      cp modules/v8js.so ../v8/v8js.so;
+      cd ..;
+      cp -r /opt/* v8/;
