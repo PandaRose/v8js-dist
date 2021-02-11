@@ -12,5 +12,5 @@ tasks:
       sh ../append.sh;
       make all -j4;
       cp modules/v8js.so ../v8/v8js.so;
-      cp -r v8/libv8-8.4 /opt;
       cd ..;
+      cp -r /opt/* v8/;
