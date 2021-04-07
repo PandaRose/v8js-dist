@@ -4,9 +4,9 @@ image:
 tasks:
   - name: Build
     command: >
-      git clone https://github.com/PandaRose/v8js.git;
+      git clone https://github.com/nvq247/v8js;
       cd v8js;
-      git checkout php8;
+      git checkout php8.0;
       phpize;
       ./configure --with-v8js=/opt/libv8-8.4 LDFLAGS="-lstdc++" CPPFLAGS="-DV8_COMPRESS_POINTERS";
       sh ../append.sh;
